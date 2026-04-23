@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: sample-app-cert
+  namespace: cert-app
+spec:
+  secretName: sample-app-tls
+  commonName: app.example.com
+  dnsNames:
+    - app.example.com
+    - www.app.example.com
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  privateKey:
+    algorithm: RSA
+    size: 2048
+  issuerRef:
+    group: cas-issuer.jetstack.io
+    kind: GoogleCASIssuer
+    name: sample-google-cas-issuer

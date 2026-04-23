@@ -1,0 +1,9 @@
+apiVersion: cas-issuer.jetstack.io/v1beta1
+kind: GoogleCASIssuer
+metadata:
+  name: sample-google-cas-issuer
+  namespace: cert-app
+spec:
+  project: project-3d092af6-3c65-4b1c-982
+  location: us-central1
+  caPoolId: enterprise-ca-pool
